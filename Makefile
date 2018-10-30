@@ -3320,6 +3320,7 @@ LIBGPR_SRC = \
     src/core/lib/gpr/cpu_linux.cc \
     src/core/lib/gpr/cpu_posix.cc \
     src/core/lib/gpr/cpu_windows.cc \
+    src/core/lib/gpr/cxx_canary.cc \
     src/core/lib/gpr/env_linux.cc \
     src/core/lib/gpr/env_posix.cc \
     src/core/lib/gpr/env_windows.cc \
