@@ -20,7 +20,6 @@ volatile FnT fn_sink;
 
 bool my_test(Foo *f) {
   std::cout << "here\n";
-  ((void)s)
   sink = f;
   fn_sink = &__cxxabiv1::__cxa_rethrow;
   return fn_sink != nullptr;
