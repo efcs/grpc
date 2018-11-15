@@ -129,7 +129,7 @@ ENABLE_DOCUMENTATION_BUILD = os.environ.get(
 EXTRA_ENV_COMPILE_ARGS = os.environ.get('GRPC_PYTHON_CFLAGS', None)
 EXTRA_ENV_LINK_ARGS = os.environ.get('GRPC_PYTHON_LDFLAGS', None)
 if EXTRA_ENV_COMPILE_ARGS is None:
-  EXTRA_ENV_COMPILE_ARGS = ' -std=c++11'
+  EXTRA_ENV_COMPILE_ARGS = ' -std=c++11 -xc++'
   if 'win32' in sys.platform and sys.version_info < (3, 5):
     EXTRA_ENV_COMPILE_ARGS += ' -D_hypot=hypot'
     # We use define flags here and don't directly add to DEFINE_MACROS below to
@@ -141,7 +141,7 @@ if EXTRA_ENV_COMPILE_ARGS is None:
     else:
       EXTRA_ENV_COMPILE_ARGS += ' -D_ftime=_ftime64 -D_timeb=__timeb64'
   elif "linux" in sys.platform:
-    EXTRA_ENV_COMPILE_ARGS += ' -std=gnu99 -fvisibility=hidden -fno-wrapv -fno-exceptions -std=c++11'
+    EXTRA_ENV_COMPILE_ARGS += '-fvisibility=hidden -fno-wrapv -fno-exceptions'
   elif "darwin" in sys.platform:
     EXTRA_ENV_COMPILE_ARGS += ' -fvisibility=hidden -fno-wrapv -fno-exceptions'
 EXTRA_ENV_COMPILE_ARGS += ' -DPB_FIELD_16BIT'
