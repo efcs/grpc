@@ -1,6 +1,5 @@
 #include <cxxabi.h>
-#include <vector>
-#error SHOOT
+#include <iostream>
 
 struct Foo {
   virtual void foo() = delete;
@@ -20,6 +19,8 @@ using FnT = void(*)();
 volatile FnT fn_sink;
 
 bool my_test(Foo *f) {
+  std::cout << "here\n";
+  ((void)s)
   sink = f;
   fn_sink = &__cxxabiv1::__cxa_rethrow;
   return fn_sink != nullptr;
