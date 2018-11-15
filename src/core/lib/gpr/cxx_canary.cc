@@ -1,5 +1,6 @@
 #include <cxxabi.h>
-
+#include <vector>
+#error SHOOT
 
 struct Foo {
   virtual void foo() = delete;
